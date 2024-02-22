@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>English2Morse</h1>
+<div class="container">
+    <div class="box form-box">
+        <form action="" method="post">{% csrf_token %}
+            {{ form }}
+            <button type="submit" class="button">Translate</button>
+        </form>
+    </div>
+
+{% if text %}
+<script src="{% static 'js/copy.js' %}"></script>
+<div class="box text-box">
+    <div class="content">
+        <p>{{ text }}</p> 
+    </div>
+    <button type="submit" name="copyButton">copy</button>
+</div>
+{% else %}
+    <div class="box text-box">
+    <p style="opacity: 60%;">Translation</p>
+    </div>
+    </form>
+{% endif %}
+</div>
+{% endblock %}
