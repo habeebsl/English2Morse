@@ -25,7 +25,6 @@ def to_morse_code(text):
             converted.append(' ')
     return " ".join(converted)
     
-
 def to_english(morse_code):
     converted = []
     separated_morse = morse_code.split(" ")
@@ -37,7 +36,9 @@ def to_english(morse_code):
         else:
             converted.append(' ')
     return "".join(converted)
-def main():
+
+
+def testrun():
     # Collect inputs from the user
     conversion_direction = input("Would you like to convert to Morse code (yes/no): ").lower()
     user_input = input("Enter the text or Morse code: ")
