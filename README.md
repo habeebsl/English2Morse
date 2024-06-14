@@ -25,83 +25,108 @@
 |--------|----------------------------|--------------------------------------|
 | GET    | /api/translate/            | Translates between English and Morse code |
 
-- **Endpoint Details**
-  - For each endpoint, include the following:
-    - **URL**
-    - **HTTP Method** (GET, POST, PUT, DELETE, etc.)
-    - **Description**
-    - **Parameters**
-      - Query parameters
-      - Path parameters
-      - Body parameters
-    - **Request Example**
-    - **Response Example**
-    - **Error Codes and Messages**
+### Endpoint Details
 
-### Example Endpoint Detail
-```
-#### GET /example-endpoint
-- **Description**: Fetches a list of examples.
+#### GET /api/translate/
+- **Description**: Translates between English and Morse code based on the provided parameters.
 - **Parameters**:
-  - Query: `param1` (string) - Description of param1.
-  - Query: `param2` (int) - Description of param2.
+  - **Query**:
+    - `translate` (string, required) - The target translation language, either `english` or `morse`.
+    - `text` (string, required) - The text to be translated.
+  - Note: Both parameters are required.
 - **Request Example**:
-  ```http
-  GET /example-endpoint?param1=value1&param2=value2
-  Authorization: Bearer {api_key}
-  ```
+  - English to Morse:
+    ```http
+    GET /api/translate/?translate=morse&text=Example%20text
+    ```
+  - Morse to English:
+    ```http
+    GET /api/translate/?translate=english&text=.-..%20-%20..-%20.-..%20.--.%20.%20.%20-%20%-%20..-%20-%20.-%20.%20-%20.-..%20--.%20-..%20.-..%20-..
+    ```
 - **Response Example**:
-  ```json
-  {
-    "data": [
-      {
-        "id": 1,
-        "name": "Example"
-      }
-    ]
-  }
-  ```
+  - English to Morse:
+    ```json
+    {
+      "translate": "morse",
+      "text": "Example text",
+      "translation": ". -..- .- -- .--. .-.. .   - . -..- -"
+    }
+    ```
+  - Morse to English:
+    ```json
+    {
+      "translate": "english",
+      "text": ". -..- .- -- .--. .-.. .   - . -..- -",
+      "translation": "Example text"
+    }
+    ```
 - **Errors**:
-  - `400 Invalid request` - The request parameters are invalid.
-  - `401 Unauthorized` - Authentication failed.
+  - `400 Bad Request` - The request is invalid or missing required parameters.
+    - Example response:
+      ```json
+      {
+        "error": "Invalid request. Provide both 'translate' and 'text' parameters."
+      }
+      ```
 
 ## 4. Data Models
-- Detailed descriptions of the data structures used in requests and responses.
-  - **Example Model**:
-    - `id` (int) - Unique identifier.
-    - `name` (string) - Name of the example.
+- **Translation Request Parameters**
+  - `translate` (string) - The target translation language, either `english` or `morse`.
+  - `text` (string) - The text to be translated.
+- **Translation Response**
+  - `translate` (string) - The target translation language, either `english` or `morse`.
+  - `text` (string) - The original text to be translated.
+  - `translation` (string) - The translated text.
 
 ## 5. Examples
-- Code snippets in various programming languages.
-- Real-world use cases and workflows.
-  - **Fetching Examples**:
-    ```python
-    import requests
 
-    url = "https://api.example.com/example-endpoint"
-    headers = {
-        "Authorization": "Bearer YOUR_API_KEY"
-    }
+### Python Example: English to Morse
+```python
+import requests
 
-    response = requests.get(url, headers=headers)
-    print(response.json())
-    ```
+text = "Example text"
+params = {
+    "translate": "morse",
+    "text": text
+}
+
+response = requests.get("http://127.0.0.1:8000/api/translate/", params=params)
+print(response.json())
+```
+
+### Python Example: Morse to English
+```python
+import requests
+
+morse_code = ". -..- .- -- .--. .-.. .   - . -..- -"
+params = {
+    "translate": "english",
+    "text": morse_code
+}
+
+response = requests.get("http://127.0.0.1:8000/api/translate/", params=params)
+print(response.json())
+```
 
 ## 6. Error Handling
-- Common error messages and how to handle them.
-  - **400 Bad Request**: The request was invalid.
-  - **401 Unauthorized**: API key is missing or invalid.
+- **400 Bad Request**: The request was invalid or missing required parameters.
+  - Ensure that both `translate` and `text` parameters are provided and valid.
+  - Example response:
+    ```json
+    {
+      "error": "Invalid request. Provide both 'translate' and 'text' parameters."
+    }
+    ```
 
 ## 7. FAQs and Troubleshooting
-- Common issues and their solutions.
-  - **What should I do if I receive a 401 error?**
-    - Ensure that your API key is correct and has not expired.
+- **What should I do if I receive a 400 error?**
+  - Verify that the request URL contains both `translate` and `text` query parameters.
+  - Check that the `translate` parameter is either `english` or `morse`.
+  - Ensure the `text` parameter is properly formatted.
 
 ## 8. Glossary
-- Definitions of terms and acronyms used in the documentation.
-  - **API**: Application Programming Interface.
-  - **Endpoint**: A specific function or operation exposed by the API.
+- **API**: Application Programming Interface.
+- **Endpoint**: A specific function or operation exposed by the API.
+- **Morse Code**: A method of encoding text characters using sequences of dots and dashes.
 
 ---
-
-This structure covers all essential aspects of API documentation and can be expanded or modified based on your specific requirements.
