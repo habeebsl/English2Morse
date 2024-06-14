@@ -15,6 +15,7 @@ morse_code_dict = {
     ' ': ' ',  "'": '.----.'
 }
 
+
 def to_morse_code(text):
     converted = []
     for char in text.upper():
@@ -37,6 +38,8 @@ def to_english(morse_code):
         else:
             converted.append(' ')
     return "".join(converted)
+
+
 def main():
     # Collect inputs from the user
     conversion_direction = input("Would you like to convert to Morse code (yes/no): ").lower()
