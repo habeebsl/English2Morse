@@ -8,7 +8,7 @@ from home.utils import to_english, to_morse_code
 
 @api_view(['GET'])
 def api_translator(request):
-    data = request.data
+    data = request.GET.dict()
     serializer = ApiSerializerClass(data=data)
     if serializer.is_valid(raise_exception=True):
         text = data["text"]
