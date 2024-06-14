@@ -35,14 +35,11 @@
     - `text` (string, required) - The text to be translated.
   - Note: Both parameters are required.
 - **Request Example**:
-  - English to Morse:
+  - English to Morse & Morse to English:
     ```http
     GET /api/translate/?translate=morse&text=Example%20text
     ```
-  - Morse to English:
-    ```http
-    GET /api/translate/?translate=english&text=.-..%20-%20..-%20.-..%20.--.%20.%20.%20-%20%-%20..-%20-%20.-%20.%20-%20.-..%20--.%20-..%20.-..%20-..
-    ```
+    
 - **Response Example**:
   - English to Morse:
     ```json
