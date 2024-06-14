@@ -87,7 +87,7 @@ params = {
     "text": text
 }
 
-response = requests.get("http://127.0.0.1:8000/api/translate/", params=params)
+response = requests.get("https://english2morse.onrender.com/api/translate/", params=params)
 print(response.json())
 ```
 
@@ -101,7 +101,7 @@ params = {
     "text": morse_code
 }
 
-response = requests.get("http://127.0.0.1:8000/api/translate/", params=params)
+response = requests.get("https://english2morse.onrender.com/api/translate/", params=params)
 print(response.json())
 ```
 
