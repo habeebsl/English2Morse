@@ -5,19 +5,19 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
-    background-color: #111111; /* Dark background color */
-    color: #fff; /* Light text color */
-    font-family: 'Roboto', sans-serif; /* Use a different font */
+    background-color: #111111;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
 }
 
 h1 {
     color: #4caf50;
-    margin-top: 20px; /* Add margin to create space at the top */
+    margin-top: 20px;
 }
 
 .container {
     display: flex;
-    flex-direction: column; /* Adjust to column layout */
+    flex-direction: column;
     align-items: center;
 }
 
@@ -30,21 +30,21 @@ h1 {
     justify-content: center;
     align-items: center;
     border-radius: 8px;
-    background-color: #1f1f1f; /* Dark background color */
+    background-color: #1f1f1f;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .text-box {
-    margin-right: 10px; /* Adjust the spacing between text and form boxes as needed */
-    width: 400px; /* Adjust the width of the text box as needed */
-    text-align: center; /* Align text horizontally to the center */ 
+    margin-right: 10px;
+    width: 400px;
+    text-align: center;
     color: #4caf50;
     font-size: 25px;
 }
 
 .dropdown-box {
-    margin-right: 10px; /* Adjust the spacing between dropdown and form boxes as needed */
-    align-items: flex-start; /* Align items at the start (top) of the box */
+    margin-right: 10px;
+    align-items: flex-start;
 }
 
 select {
@@ -55,8 +55,8 @@ select {
     box-sizing: border-box;
     margin-left: 0px;
     font-size: 15px;
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Light text color */
+    background-color: #333;
+    color: #fff;
 }
 
 .form-box form {
@@ -70,14 +70,14 @@ textarea {
     width: 100%;
     height: 100px;
     padding: 10px;
-    border: none; /* Remove the border */
-    outline: none; /* Remove the outline when focused */
+    border: none;
+    outline: none;
     border-radius: 4px;
     box-sizing: border-box;
-    font-size: 16px; /* Adjust the text size as needed */
-    margin: 0; /* Remove default margin */
-    background-color: #333; /* Dark background color */
-    color: #fff; /* Light text color */
+    font-size: 16px;
+    margin: 0;
+    background-color: #333;
+    color: #fff;
 }
 
 button {
@@ -88,7 +88,7 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 4px;
-    font-size: 16px; /* Adjust the text size as needed */
+    font-size: 16px;
     transition: background-color 0.3s;
 }
 
@@ -101,14 +101,14 @@ button:hover {
 @media only screen and (max-width: 384px) {
     h1 {
         color: #4caf50;
-        margin-top: 20px; /* Add margin to create space at the top */
+        margin-top: 20px;
         font-size: 27px;
     }
 
     .text-box {
-        margin-right: 10px; /* Adjust the spacing between text and form boxes as needed */
-        width: 278px; /* Adjust the width of the text box as needed */
-        text-align: center; /* Align text horizontally to the center */ 
+        margin-right: 10px;
+        width: 278px;
+        text-align: center;
         color: #4caf50;
         font-size: 25px;
     }
@@ -121,8 +121,8 @@ button:hover {
         box-sizing: border-box;
         margin-left: 0px;
         font-size: 15px;
-        background-color: #333; /* Dark background color */
-        color: #fff; /* Light text color */
+        background-color: #333;
+        color: #fff;
     }
     
     .form-box form {
@@ -140,21 +140,21 @@ button:hover {
         cursor: pointer;
         border: none;
         border-radius: 4px;
-        font-size: 16px; /* Adjust the text size as needed */
+        font-size: 16px;
     }
 }
 
 @media only screen and (min-width: 385px) and (max-width: 425px) {
     h1 {
         color: #4caf50;
-        margin-top: 20px; /* Add margin to create space at the top */
+        margin-top: 20px;
         font-size: 27px;
     }
 
     .text-box {
-        margin-right: 10px; /* Adjust the spacing between text and form boxes as needed */
-        width: 320px; /* Adjust the width of the text box as needed */
-        text-align: center; /* Align text horizontally to the center */ 
+        margin-right: 10px;
+        width: 320px;
+        text-align: center;
         color: #4caf50;
         font-size: 25px;
     }
@@ -167,8 +167,8 @@ button:hover {
         box-sizing: border-box;
         margin-left: 0px;
         font-size: 15px;
-        background-color: #333; /* Dark background color */
-        color: #fff; /* Light text color */
+        background-color: #333;
+        color: #fff;
     }
     
     .form-box form {
@@ -186,7 +186,7 @@ button:hover {
         cursor: pointer;
         border: none;
         border-radius: 4px;
-        font-size: 16px; /* Adjust the text size as needed */
+        font-size: 16px;
     }
 }
 
